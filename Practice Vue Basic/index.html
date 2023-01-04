@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+        .box{
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background-color: #ddd;
+            margin:20px;
+            display: inline block;
+        }
+        body{
+            background-color: #eee;
+            max-width: 960px;
+            margin:20px auto;
+        }
+        p,h3,ul{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style-type: none;
+            background: #fff;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+        img{
+            display: inline;
+        }
+        li.fav{
+           background-color: aqua;
+           color:wheat; 
+        }
+
+        </style>  
+</head>
+<body>
+    <h1> Hello Vue </h1>
+    <div id="app">
+
+        <!-- Render data properties -->
+            <p> {{title}} {{author}}{{place}} {{age}} </p>
+
+        <!-- # Click Events  --> 
+            <button v-on:click="age++">Increase Age Properties</button>   
+            <button v-on:click="age--">Increase Age Properties</button>   
+            <button @click="title= 'Prakash1'">Change Title</button>   
+            <button @click="changeAuthor('NewOne')">Change Author</button>   
+
+        <!-- Condition Rendering Based on the Condition  -->
+            <p v-if="showbooks"> {{title}} {{author}}{{place}} {{age}} </p>
+            <button @click="bookisthere">
+            <span v-if="showbooks">  Hide details</span>   
+            <!-- <span v-if="!showbooks">  Show details</span>    -->
+            <span  v-else="showbooks">  Show details</span>   
+            </button>   
+            <div v-show="showbooks"> Currently Show Books</div>
+         <br>
+         <br>
+
+        <!-- // mouse event     -->
+            <!-- <div class="box" @mouseover="handleevent($event,5)">Mouse Over(enter)</div>
+            <div class="box" @mouseleave="handleevent"> Mouse Leave</div>
+            <div class="box" @dblclick="handleevent">Double Click</div>
+            <div class="box" @mousemove="handlemousemove">MouseMove pos{{x}} {{y}}</div> -->
+
+         <!-- For Loop         -->
+            <ul> 
+                <li v-for="book in books">
+                    <p>{{book.title}},{{book.author}} </p> 
+                </li>
+            </ul>          
+
+          <!-- Attribute Binding   -->
+          <a v-bind:href="url">Google  link</a>
+          <a :href="url">Google  link</a>
+            <li v-for="book in books">
+            <!-- <img :src="book.img"  :alt="book.title"> -->
+            <!-- <p>{{book.title}},{{book.author}} </p>  -->
+            </li>
+
+         <!-- Dynamic Classes Binding -->
+         <!-- <li v-for="book in books" :class="{fav:book.isFav}" @click="handlelievent(book)">
+            <img :src="book.img"  :alt="book.title" height="100px" width="110px">
+            <h5 >{{book.title}}</h5>
+               <p> {{book.author}} </p> 
+
+        </li> -->
+        <!-- Computed Properties     -->
+        <li v-for="book in filteredBooks" :class="{fav:book.isFav}" @click="handlelievent(book)">
+            <img :src="book.img"  :alt="book.title" height="100px" width="110px">
+            <h5 >{{book.title}}</h5>
+               <p> {{book.author}} </p> 
+
+        </li>
+
+    </div>
+</body>
+<script  src="app.js"></script>   
+  
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basic</title>
+    <script src="https://unpkg.com/vue@3.1.1/dist/vue.global.prod.js"></script>
+    <style>
+       .bol{
+         color:  blue;
+         text-shadow: 2px 2px blueviolet;
+       } 
+    </style>
+</head>
+<body>
+    <h1>Hi sh </h1>
+
+    <div id="app">
+        <!-- we call this Interpolation and directives  -->
+      <h2> Name : {{appName + 1}}</h2>
+      <!-- <h3 v-once>{{appName.split('').reverse().join('')}}</h3>
+      <h4 v-bind:[attr]='"id"'>Some text</h4>
+      <h4 v-bind:[attr]='t'>Some text</h4>
+      <h5 v-bind:class='t'>Hey THIS color is going to blue</h5>
+      <h4 v-html = "custhtml"></h4> -->
+      <h2> {{counter }} {{showDate()}} </h2>
+      <!-- <button v-on:click="increment">Increment</button>
+      <button @click="increment">Increment</button>
+      -->
+      <!-- if else for loop -->
+      <!-- <h2 v-if="showName"> Condition Based : {{appName}}</h2>
+      <h2 v-else> Other Condition Based value: {{appName}}</h2>
+      
+      <button @click="showName=!showName">Show Condition Name</button>
+      
+      <h3 v-if="user==0">
+        No User Here
+      </h3>
+      <h3 v-else-if="user==1">
+        first user      
+      </h3>
+      <h3 v-else>
+        {{user}} Users Found
+      </h3>
+      <button @click="user++"> 
+         Check User Condition
+       </button> 
+       <ul>
+        <li v-for = "(item,i) in shopping_item">
+            {{i}} {{item}}
+        </li>
+       </ul>
+       <button @click="additem"> 
+        Add more item in cart
+      </button> 
+      <li v-for = "(key,value) in person">
+        {{key}}: {{value}}
+      </li> -->
+  
+      
+
+    </div>
+</body>
+<!-- # including app js where vue thing is happening  -->
+<script  src="app.js"></script>    
+</html>
